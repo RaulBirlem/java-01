@@ -13,6 +13,12 @@ public class Pessoa {
         this.peso = 0.0;
     }
 
+    public Pessoa(String nome, int idade, double altura, double peso) {
+        this.nome = nome;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
+    }
 
     public void setNome( String nome) {
         this.nome = nome;
@@ -44,6 +50,23 @@ public class Pessoa {
 
     public double getPeso() {
         return this.peso;
+    }
+
+    public double calcularImc() {
+        return peso / (altura * altura);
+    }
+
+    public String classificacaoDeImc() {
+        double imc = calcularImc();
+
+        if (imc < 18.5) return "Abaixo do peso";
+        if (imc < 25.0) return "Peso normal";
+        if (imc < 30) return "Sobrepeso";
+        return "Obesidade";
+    }
+
+    public String apresentar() {
+        return "Olá, me chamo "+ nome +", eu tenho "+idade+" anos, peso "+ peso + " kg e tenho "+ altura+"m de altura!";
     }
 }
 

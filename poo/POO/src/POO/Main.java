@@ -12,5 +12,15 @@ public class Main {
 
         System.out.println(pessoa1.getNome() + " "+ pessoa1.getIdade()
         + " "+ pessoa1.getPeso() + " "+ pessoa1.getAltura());
+
+        Pessoa pessoa2 = new Pessoa("Maria",44, 1.40, 40 );
+
+        System.out.println(pessoa2.getNome());
+
+        System.out.println(pessoa2.calcularImc());
+
+        System.out.println(pessoa2.classificacaoDeImc());
+        System.out.println(pessoa1.apresentar());
+        System.out.println(pessoa2.apresentar());
     }
 }
